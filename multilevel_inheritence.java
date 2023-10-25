@@ -28,7 +28,7 @@ class Course extends Student{
     }
 }
 
-class Admission extends Student {
+class Admission extends Course {
     int class_no ;
     int admission_no;
 
@@ -44,16 +44,12 @@ class Admission extends Student {
 }
 public class multilevel_inheritence {
     public static void main(String[] args) {
-        Course c1 = new Course();
-        c1.student("John",25);
-        c1.course("Maths",101);
-        c1.display();
-        c1.displayCourseDetails();
-
-        Admission a1 = new Admission();
-        a1.student("Mike",30);
-        a1.admission(4,6789);
-        a1.display();
-        a1.displayAdmissionDetails();
+        Admission a1 = new Admission() ;
+        a1.student("John",20) ;
+        a1.course("Maths",56789) ;
+        a1.admission(3, 1234) ;
+        a1.display(); 
+        a1.displayCourseDetails(); 
+        a1.displayAdmissionDetails(); 
     }
 }
