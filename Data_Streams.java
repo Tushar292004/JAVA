@@ -5,14 +5,14 @@ public class Data_Streams {
 
       // writing string to a file encoded as modified UTF-8
       DataOutputStream dataOut = new DataOutputStream(new FileOutputStream("file.txt"));
-      dataOut.writeUTF("hello");
+      dataOut.writeUTF("hello macha how are you");
 
       // Reading data from the same file
       DataInputStream dataIn = new DataInputStream(new FileInputStream("file.txt"));
 
       while(dataIn.available()>0) {
          String k = dataIn.readUTF();
-         System.out.println(k+" ");
+         System.out.println(k);
       }
    }
 }
