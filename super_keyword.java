@@ -18,7 +18,7 @@ class Execute extends Addition {
     int c, sum;
 
     Execute(int x, int y, int z) {
-        super(x, y);
+        super(x, y);  //super keyword invoking constructor class
         c = z;
     }
 
