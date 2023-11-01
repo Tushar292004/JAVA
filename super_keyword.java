@@ -1,48 +1,35 @@
-import java.io.*;
-import java.util.*;
+class College {
+    String collegeName;
+    String location;
 
-class Addition {
-    int a, b;
-
-    Addition(int x, int y) {
-        a = x;
-        b = y;
+    public College(String collegeName, String location) {
+        this.collegeName = collegeName;
+        this.location = location;
     }
 
-    void show() {
-        System.out.println("The values are" + a + " and " + b);
-    }
-}
-
-class Execute extends Addition {
-    int c, sum;
-
-    Execute(int x, int y, int z) {
-        super(x, y);  //super keyword invoking constructor class
-        c = z;
-    }
-
-    void showc() {
-        System.out.println("and " + c + " is");
-    }
-
-    void cal() {
-        int sum = a + b + c;
-        System.out.println("the sum of the given values is " + sum);
+    public void displayCollegeInfo() {
+        System.out.println("College Name: " + collegeName);
+        System.out.println("Location: " + location);
     }
 }
 
-class Demo {
-    public static void main(String args[]) {
-        int a1, b1, c1;
-        Scanner s = new Scanner(System.in);
-        System.out.println("enter 3 values to add them");
-        a1 = s.nextInt();
-        b1 = s.nextInt();
-        c1 = s.nextInt();
-        Execute e = new Execute(a1, b1, c1);
-        e.show();
-        e.showc();
-        e.cal();
+class Department extends College {
+    String departmentName;
+
+    public Department(String collegeName, String location, String departmentName) {
+        super(collegeName, location); // Invoke the constructor of the base class
+        this.departmentName = departmentName;
+    }
+
+    public void displayDepartmentInfo() {
+        System.out.println("Department Name: " + departmentName);
+        displayCollegeInfo(); // Call the base class method
+    }
+}
+
+public class super_keyword {
+    public static void main(String[] args) {
+        Department department = new Department("XYZ College", "CityName", "Computer Science");
+        department.displayDepartmentInfo();
     }
 }
