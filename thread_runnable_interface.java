@@ -4,8 +4,8 @@ class FirstThread implements Runnable {
             System.out.println("Message from First Thread : " + i);
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException interruptedException) {
-                System.out.println("First Thread is interrupted when it is sleeping" + interruptedException);
+            } catch (Exception e) {
+                System.out.println("First Thread is interrupted when it is sleeping" + e);
             }
         }
     }
@@ -17,8 +17,8 @@ class SecondThread implements Runnable {
             System.out.println("Message from Second Thread : " + i);
             try {
                 Thread.sleep(1000);
-            } catch (InterruptedException interruptedException) {
-                System.out.println("Second Thread is interrupted when it is sleeping" + interruptedException);
+            } catch (Exception e) {
+                System.out.println("Second Thread is interrupted when it is sleeping" + e);
             }
         }
     }
